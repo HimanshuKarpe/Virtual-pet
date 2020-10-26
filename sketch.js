@@ -12,7 +12,7 @@ function preload()
 
 function setup() {
   database = firebase.database();
-  foodStock=database.ref('food');
+  foodStock=database.ref('Food');
   foodStock.on("value",readStock);
 
 	createCanvas(800, 800);
@@ -33,7 +33,9 @@ function draw() {
 
   drawSprites();
   //add styles here
-  text("Food Remaining:")
+  textSize(30);
+  fill("blue");
+  text("Press UP_ARROW to feed the dog",150,50)
 
 }
 function readStock(data){
